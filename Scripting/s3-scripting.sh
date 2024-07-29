@@ -11,7 +11,8 @@ read -p "enter your bucket prefix: " dir
 aws s3 cp . s3://${bucket_name}/$dir/ --recursive
 
 # Count the number of prefixes in bucket created above
-aws s3 ls s3://${bucket_name}/ | wc -l
+count=`aws s3 ls s3://${bucket_name}/ | wc -l`
+echo "Total number of prefixe(s) = ${count}"
 
 # 90days-project-repo
 # team10-group2-etechapp
